@@ -119,14 +119,86 @@ main > section{
     font-weight: 500;
 }
 
+/* features section styles */
+.features{
+    gap: 120px;
+}
+#feature-section-title{
+    border-left: 5px solid rgb(255, 144, 14); 
+    padding-left: 20px;
+}
+
+.feature-card{
+    padding: 30px;
+    box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.06);
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+.feature-card .feature-title{
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+ 
+}
+
+/* some facts related styles */
+.fact-card{
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 144, 14);
+    border-radius: 8px;
+    width: 210px;
+    height: 210px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.facts-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.fact-number{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.fact-name{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.fact-description{
+    max-width: 540px;
+}
+/* sponsor styles */
+
+.sponsor-info{
+    max-width: 540px;
+    margin: 50px auto;
+    text-align: center;
+}
+.sponsor-companies{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+.sponsor-companies img{
+    filter: grayscale(100%);
+}
+
 /* responsive media query */
 @media screen and (max-width:576px) {
     .navbar , .nav-links , .teams{
         flex-direction: column;
         
     }
-    .team-img-container{
+    .team-img-container , 
+    .facts-container ,
+    .sponsor-companies {
         grid-template-columns: repeat(1,1fr);
+    }
+    .facts-container , .sponsor-companies{
+        justify-items: center;
+        gap: 24px;
     }
     .our-features{
         margin-left: 20px;
@@ -134,6 +206,7 @@ main > section{
 
    
 }
+
 
 /* medium devices */
 
@@ -143,5 +216,18 @@ main > section{
     }
     .our-features{
         margin-left: 50px auto;
+    }
+
+    .sponsor-companies{
+        grid-template-columns: repeat(3,1fr);
+        gap: 24px;
+        justify-items: center;
+
+
+    }
+    .facts-container{
+        grid-template-columns: repeat(2,1fr);
+        gap: 50px;
+        justify-items: center;
     }
 }
